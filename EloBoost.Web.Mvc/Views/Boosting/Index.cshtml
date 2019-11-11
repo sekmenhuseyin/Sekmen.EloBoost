@@ -1,0 +1,151 @@
+﻿@inject EloBoost.Timing.AppTimes AppTimes
+@using EloBoost.Shared.Enums
+@using EloBoost.Models.Boosters
+@model BoostersPageViewModel
+@{
+    ViewData["Title"] = "Boosting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script src="/Api/GetPriceJs?v=@(AppTimes.StartupTime.Ticks)" type="text/javascript"></script>
+    <environment names="Development">
+        <script src="~/view-resources/Views/Payment/prices.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Shared/Forms.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Payment/prices.min.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Shared/Forms.min.js" asp-append-version="true"></script>
+    </environment>
+}<!-- Page Title============================================= -->
+<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('images/parallax/8.jpg'); background-size: cover; padding: 80px 0;" data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -300px;">
+    <div class="container clearfix">
+        <h1>Lol eloboost</h1>
+        <span>Bu sayfadan hizmetlerimizi seçebilirsiniz</span>
+    </div>
+</section><!-- #page-title end -->
+<section id="content">
+    <div class="content-wrap" id="﻿AjaxFormArea">
+        @Html.Partial("_Boosters")
+        <form id="AjaxForm" asp-action="Purchase" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="FormSecurity" />
+
+            <div class="container clearfix topmargin-lg bottommargin">
+                <h2 class="text-center">League Boosting	</h2>
+                <p class="text-center">The booster will log on your account and will play in your account until reaching your desired division.</p>
+
+                <div class="row boostArea">
+                    <div class="col-md-4">
+                        <div class="feature-box fbox-small fbox-light fbox-effect">
+                            <div class="fbox-icon">
+                                <a href="javascript:;"><i>1</i></a>
+                            </div>
+                            <h3>YOUR CURRENT LEAGUE</h3>
+                            <div style="clear:both;"></div>
+                            <div class="fboxContent">
+                                <div class="badgeLig">
+                                    <img alt="bronze" class="bronze" src="https://eloboost24.eu/images/tools/badges/bronze_fit.png">
+                                    <img alt="silver" class="silver" src="https://eloboost24.eu/images/tools/badges/silver_fit.png">
+                                    <img alt="gold" class="gold" src="https://eloboost24.eu/images/tools/badges/gold_fit.png">
+                                    <img alt="platinum" class="platinum" src="https://eloboost24.eu/images/tools/badges/platinum_fit.png">
+                                    <img alt="diamond" class="diamond" src="https://eloboost24.eu/images/tools/badges/diamond_fit.png">
+                                </div>
+                                <div class="selectsArea">
+                                    <select id="SourceLeagueTypes" name="SourceLeagueTypes" class="selectpicker league" required asp-items="Html.GetEnumSelectList<SourceLeagueTypes>()" asp-for="SourceLeagueTypes"></select>
+                                    <select id="SourceDivisionTypes" name="SourceDivisionTypes" class="selectpicker" required asp-items="Html.GetEnumSelectList<DivisionTypes>()" asp-for="SourceDivisionTypes"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="feature-box fbox-small fbox-light fbox-effect">
+                            <div class="fbox-icon">
+                                <a href="javascript:;"><i>2</i></a>
+                            </div>
+                            <h3>YOUR DESIRE LEAGUE</h3>
+                            <div style="clear:both;"></div>
+                            <div class="fboxContent">
+                                <div class="badgeLig">
+                                    <img class="bronze" src="https://eloboost24.eu/images/tools/badges/bronze_fit.png">
+                                    <img class="silver" src="https://eloboost24.eu/images/tools/badges/silver_fit.png">
+                                    <img class="gold" src="https://eloboost24.eu/images/tools/badges/gold_fit.png">
+                                    <img class="platinum" src="https://eloboost24.eu/images/tools/badges/platinum_fit.png">
+                                    <img class="diamond" src="https://eloboost24.eu/images/tools/badges/diamond_fit.png">
+                                    <img class="master" src="https://eloboost24.eu/images/tools/badges/master_fit.png">
+                                </div>
+                                <div class="selectsArea">
+                                    <select id="DestinationLeagueTypes" name="DestinationLeagueTypes" class="selectpicker league" required asp-items="Html.GetEnumSelectList<LeagueTypes>()" asp-for="DestinationLeagueTypes"></select>
+                                    <select id="DestinationDivisionTypes" name="DestinationDivisionTypes" class="selectpicker" required asp-items="Html.GetEnumSelectList<DivisionTypes>()" asp-for="DestinationDivisionTypes"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="feature-box fbox-small fbox-light fbox-effect">
+                            <div class="fbox-icon">
+                                <a href="javascript:;"><i>3</i></a>
+                            </div>
+                            <h3>Maç başı lp</h3>
+                            <div style="clear:both;"></div>
+                            <div class="fboxContent">
+                                <div class="selectsArea">
+                                    <select id="LeaguePoints" name="LeaguePoints" class="selectpicker" required asp-items="Html.GetEnumSelectList<LeaguePoints>()" asp-for="LeaguePoints"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boostArea topmargin-sm">
+                    <div class="col-md-4 offset-md-2">
+                        <div class="feature-box fbox-small fbox-light fbox-effect">
+                            <div class="fbox-icon">
+                                <a href="javascript:;"><i>4</i></a>
+                            </div>
+                            <h3>YOUR SERVER</h3>
+                            <div style="clear:both;"></div>
+                            <div class="fboxContent">
+                                <div class="selectsArea">
+                                    <select id="ServerNames" name="ServerNames" class="selectpicker" required asp-items="Html.GetEnumSelectList<ServerNames>()" asp-for="ServerNames"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box fbox-small fbox-light fbox-effect">
+                            <div class="fbox-icon">
+                                <a href="javascript:;"><i>5</i></a>
+                            </div>
+                            <h3>TYPE OF QUEUE</h3>
+                            <div style="clear:both;"></div>
+                            <div class="fboxContent">
+                                <select id="QueueTypes" name="QueueTypes" class="selectpicker" required asp-items="Html.GetEnumSelectList<QueueTypes>()" asp-for="QueueTypes"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center topmargin-lg">
+                    <h2 class="m-b-10"> KDV Dahil Fiyat: <span class="primary price">-</span></h2>
+                    <input type="hidden" id="Price" name="Price" value="0" />
+                    @*bu kısım ödemede olur
+                            <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="AgreeTermsConditions">
+                            <label class="form-check-label font-13" for="exampleCheck1">
+                                <a href="https://www.ankaeloboost.com/sartlar-ve-kosullar" target="_blank">Şartlar ve Koşulları</a> kabul ediyorum.
+                            </label>
+                        </div>*@
+                    @if (AbpSession.UserId == null)
+                    {
+                        <a href="/Account/Login?ReturnUrl=/Boosting" class="btn btn-success"><i class="fa fa-sign-in"></i> @L("LogIn")</a>
+                    }
+                    else
+                    {
+                        <button class="btn btn-success"><i class="fa fa-shopping-cart"></i> Satın Al</button>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,202 @@
+﻿@using EloBoost.Shared.Enums
+
+@{
+    ViewData["Title"] = "DuoBoosting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Page Title
+============================================= -->
+<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('/images/parallax/8.jpg'); background-size: cover; padding: 80px 0;" data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -300px;">
+
+    <div class="container clearfix">
+        <h1>Lol eloboost</h1>
+        <span>Bu sayfadan hizmetlerimizi seçebilirsiniz</span>
+    </div>
+
+</section><!-- #page-title end -->
+
+<section id="content">
+    <div class="content-wrap  bottompadding">
+
+        @Html.Partial("_Boosters")
+
+        <div class="container clearfix topmargin-lg bottommargin">
+            <h2 class="text-center">Duo Boosting</h2>
+            <p class="text-center">You will play on your own account and our booster will play with you until you achieve your desired division.</p>
+
+
+            <div class="row boostArea">
+                <div class="col-md-4">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>1</i></a>
+                        </div>
+                        <h3>YOUR CURRENT LEAGUE</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <div class="badgeLig">
+                                <img class="bronze" src="https://eloboost24.eu/images/tools/badges/bronze_fit.png">
+                                <img class="silver" src="https://eloboost24.eu/images/tools/badges/silver_fit.png">
+                                <img class="gold" src="https://eloboost24.eu/images/tools/badges/gold_fit.png">
+                                <img class="platinum" src="https://eloboost24.eu/images/tools/badges/platinum_fit.png">
+                                <img class="diamond" src="https://eloboost24.eu/images/tools/badges/diamond_fit.png">
+                            </div>
+                            <div class="selectsArea">
+                                <select class="selectpicker league">
+                                    <option>Bronze</option>
+                                    <option>Silver</option>
+                                    <option>Gold</option>
+                                    <option>Platinum</option>
+                                    <option>Diamond</option>
+                                </select>
+                                <select class="selectpicker">
+                                    <option>Küme 1</option>
+                                    <option>Küme 2</option>
+                                    <option>Küme 3</option>
+                                    <option>Küme 4</option>
+                                    <option>Küme 5</option>
+                                </select>
+                                <select class="selectpicker">
+                                    <option value="1">0-19 LP</option>
+                                    <option value="2">20-39 LP</option>
+                                    <option value="3">40-59 LP</option>
+                                    <option value="4">60-79 LP</option>
+                                    <option value="5">80-100 LP</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>2</i></a>
+                        </div>
+                        <h3>YOUR DESIRE LEAGUE</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <div class="badgeLig">
+                                <img class="bronze" src="https://eloboost24.eu/images/tools/badges/bronze_fit.png">
+                                <img class="silver" src="https://eloboost24.eu/images/tools/badges/silver_fit.png">
+                                <img class="gold" src="https://eloboost24.eu/images/tools/badges/gold_fit.png">
+                                <img class="platinum" src="https://eloboost24.eu/images/tools/badges/platinum_fit.png">
+                                <img class="diamond" src="https://eloboost24.eu/images/tools/badges/diamond_fit.png">
+                                <img class="master" src="https://eloboost24.eu/images/tools/badges/master_fit.png">
+                            </div>
+                            <div class="selectsArea">
+                                <select class="selectpicker league">
+                                    <option>Bronze</option>
+                                    <option>Silver</option>
+                                    <option>Gold</option>
+                                    <option>Platinum</option>
+                                    <option>Diamond</option>
+                                    <option>Master</option>
+                                </select>
+                                <select class="selectpicker">
+                                    <option>Küme 1</option>
+                                    <option>Küme 2</option>
+                                    <option>Küme 3</option>
+                                    <option>Küme 4</option>
+                                    <option>Küme 5</option>
+                                </select>
+                                <select class="selectpicker">
+                                    <option value="1">0-19 LP</option>
+                                    <option value="2">20-39 LP</option>
+                                    <option value="3">40-59 LP</option>
+                                    <option value="4">60-79 LP</option>
+                                    <option value="5">80-100 LP</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>3</i></a>
+                        </div>
+                        <h3>Maç başı lp</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <div class="selectsArea">
+                                <select class="selectpicker">
+                                    <option value="20">20+</option>
+                                    <option value="18" selected>18~19</option>
+                                    <option value="16">16~17</option>
+                                    <option value="12">0~15</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row boostArea topmargin-sm">
+                <div class="col-md-4 offset-md-2">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>4</i></a>
+                        </div>
+                        <h3>YOUR SERVER</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <div class="selectsArea">
+                                <select class="selectpicker">
+                                    <option value="TR">Turkey</option>
+                                    <option value="LAN">Latin America North</option>
+                                    <option value="LAS">Latin America South</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>5</i></a>
+                        </div>
+                        <h3>TYPE OF QUEUE</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <select class="selectpicker">
+                                <option value="solo_duo">Solo/Duo (5v5)</option>
+                                <option value="flex_rift">Flex (5v5)</option>
+                                <option value="flex_treeline">Flex (3v3)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+</section>
+
+
+@section scripts
+    {
+
+    <script>
+        $('.league').change(function (e, i) {
+            var selected = this.selectedIndex;
+            var logos = $(this).parents('.fboxContent').find('.badgeLig img');
+            $(logos).hide();
+            $(logos).eq(selected).fadeIn();
+
+        });
+    </script>
+}
+

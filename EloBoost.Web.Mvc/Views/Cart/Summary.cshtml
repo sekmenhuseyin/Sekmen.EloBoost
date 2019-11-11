@@ -1,0 +1,36 @@
+﻿@using EloBoost.Models.Payments
+@{
+    ViewData["Title"] = "Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Page Title============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Process Steps</h1>
+        <span>Go through a Definite Process</span>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Shortcodes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Process Steps</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+<!-- Content============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div id="processTabs">
+                @Html.Partial("_Steps", new CartStepsClasses { Complete = "active" })
+                <div>
+                    <div id="ptab4">
+                        <div class="alert alert-success">
+                            <strong>Thank You.</strong> Your order will be processed once we verify the Payment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- #content end -->

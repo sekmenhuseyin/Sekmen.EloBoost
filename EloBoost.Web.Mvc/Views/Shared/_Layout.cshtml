@@ -1,0 +1,381 @@
+﻿@using System.Globalization
+@using Abp.Configuration.Startup
+@using Abp.Web.Mvc.Alerts
+@using Abp.Web.Security.AntiForgery
+@using EloBoost.Web.Resources
+@using EloBoost.Web.Views.Shared.Components.TopBarAccountMenu
+@inject EloBoost.Timing.AppTimes AppTimes
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@inject IMultiTenancyConfig MultiTenancyConfig
+@inject IWebResourceManager WebResourceManager
+@inject IAlertManager AlertManager
+@{
+    Layout = null;
+    AbpAntiForgeryManager.SetCookie(Context);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Language" content="en" />
+    <meta name="Copyright" content="Copyright © @DateTime.Today.Year" />
+    <meta name="description" content="EloBoost" />
+    <meta name="keywords" content="EloBoost" />
+    <meta name="author" content="/humans.txt">
+    <meta name="google" content="notranslate" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>EloBoost</title>
+    @*<environment names="Development">*@
+    <link href="~/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/fonts/roboto/roboto.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/fonts/material-icons/materialicons.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/toastr/toastr.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/Waves/dist/waves.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/lib/animate.css/animate.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/components/bs-select.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/materialize.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/style.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/swiper.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/font-icons.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/dark.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/magnific-popup.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/responsive.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/project.css" rel="stylesheet" asp-append-version="true" />
+    @*</environment>
+        <environment names="Staging,Production">
+            <link href="~/view-resources/Views/_Bundles/shared-layout.min.css" rel="stylesheet" asp-append-version="true" />
+        </environment>*@
+    <!-- View specific styles -->
+    @RenderSection("styles", required: false)
+    <script type="text/javascript">
+        // This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {};
+        abp.appPath = '@ApplicationPath';
+    </script>
+</head>
+<body class="theme-black stretched">
+    @if (AlertManager.Alerts.Any())
+    {
+        <div id="AbpPageAlerts">
+            @foreach (var alertMessage in AlertManager.Alerts)
+            {
+                <div class="alert alert-@alertMessage.Type.ToString().ToLower() @(alertMessage.Dismissible ? "alert-dismisable" : "")" role="alert">
+                    <h4 class="alert-heading">
+                        @alertMessage.Title
+                        @if (alertMessage.Dismissible)
+                        {
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        }
+                    </h4>
+                    <p>@alertMessage.Text</p>
+                </div>
+            }
+        </div>
+    }
+    <!-- Document Wrapper    ============================================= -->
+    <div id="wrapper" class="clearfix">
+        <!-- Top Bar                ============================================= -->
+        <div id="top-bar" class="dark semi-transparent transparent-header" style="z-index:500;">
+            <div class="container clearfix">
+                <div class="col_half nobottommargin">
+                    <!-- Top Links                    ============================================= -->
+                    <div class="top-links">
+                        <ul>
+                            <li><a href="~/PrivacyPolicy">Gizlilik sözleşmesi</a></li>
+                            <li><a href="~/FAQ">SSS</a></li>
+                            <li><a href="~/Rules">Kurallar</a></li>
+                            @await Component.InvokeAsync(typeof(TopBarAccountMenuViewComponent))
+
+                        </ul>
+                    </div><!-- .top-links end -->
+                </div>
+                <div class="col_half fright col_last nobottommargin">
+                    <!-- Top Social                    ============================================= -->
+                    <div id="top-social">
+                        <ul>
+                            <li><a href="#" class="si-facebook"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
+                            <li><a href="#" class="si-twitter"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
+                            <li><a href="#" class="si-instagram"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
+                            <li><a href="tel:+91.11.85412542" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+91.11.85412542</span></a></li>
+                            <li><a href="mailto:" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@eloboost.com</span></a></li>
+                        </ul>
+                    </div><!-- #top-social end -->
+                </div>
+            </div>
+        </div><!-- #top-bar end -->
+        <!-- Header        ============================================= -->
+        <header id="header" class="dark semi-transparent transparent-header">
+            <div id="header-wrap">
+                <div class="container clearfix">
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+                    <!-- Logo                    ============================================= -->
+                    <div id="logo">
+                        <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png" alt="Canvas Logo"></a>
+                        <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo@2x.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+                    <!-- Primary Navigation                    ============================================= -->
+                    <nav id="primary-menu">
+                        <ul>
+                            <li><a href="/"><div>Ana sayfa</div></a>
+                            <li><a href="/About"><div>Biz Kimiz?</div></a>
+                            <li><a href="/Boosting"><div>Lol Eloboost</div></a>
+                            <li><a href="/Coaching"><div>Koçluk</div></a>
+                            <li><a href="/Gallery"><div>Galeri</div></a>
+                            <li><a href="/Contact"><div>İletişim</div></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header><!-- #header end -->
+        @RenderBody()
+        <!-- Footer        ============================================= -->
+        <footer id="footer" class="dark">
+            <div class="container">
+                <!-- Footer Widgets                ============================================= -->
+                <div class="footer-widgets-wrap clearfix">
+
+                    <div class="col_half">
+
+                        <div class="col_half">
+
+                            <div class="widget clearfix">
+
+                                <img src="/images/footer-widget-logo.png" alt="" class="footer-logo">
+
+                                <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
+
+                                <div style="background: url('/images/world-map.png') no-repeat center center; background-size: 100%;">
+                                    <address>
+                                        <strong>Headquarters:</strong><br>
+                                        795 Folsom Ave, Suite 600<br>
+                                        San Francisco, CA 94107<br>
+                                    </address>
+                                    <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
+                                    <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
+                                    <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col_half col_last">
+
+                            <div class="widget widget_links clearfix">
+
+                                <h4>Blogroll</h4>
+
+                                <ul>
+                                    <li><a href="http://codex.wordpress.org/">Documentation</a></li>
+                                    <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+                                    <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+                                    <li><a href="http://wordpress.org/support/">Support Forums</a></li>
+                                    <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+                                    <li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
+                                    <li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_half col_last">
+
+                        <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                            <div class="row">
+
+                                <div class="col-lg-6 bottommargin-sm">
+                                    <div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+                                    <h5 class="nobottommargin">Total Downloads</h5>
+                                </div>
+
+                                <div class="col-lg-6 bottommargin-sm">
+                                    <div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+                                    <h5 class="nobottommargin">Clients</h5>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="widget subscribe-widget clearfix">
+                            <h5>Duyurulardan haberdar olmak için abone olunuz:</h5>
+                            <div class="widget-subscribe-form-result"></div>
+                            <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+                                <div class="input-group divcenter">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="icon-email2"></i></div>
+                                    </div>
+                                    <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit">Abone ol</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                            <div class="row">
+
+                                <div class="col-lg-6 clearfix bottommargin-sm">
+                                    <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                                </div>
+                                <div class="col-lg-6 clearfix">
+                                    <a href="#" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-instagram2"></i>
+                                        <i class="icon-instagram2"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Follow</strong><br>on Instagram</small></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div><!-- .footer-widgets-wrap end -->
+            </div>
+            <!-- Copyrights            ============================================= -->
+            <div id="copyrights">
+                <div class="container clearfix">
+                    <div class="col_half">
+                        Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+                        <div class="copyright-links"><a href="/TermsOfUse">Terms of Use</a> / <a href="/PrivacyPolicy">Privacy Policy</a></div>
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="fright clearfix">
+                            <a href="#" class="social-icon si-small si-borderless si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                                <i class="icon-vimeo"></i>
+                                <i class="icon-vimeo"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                                <i class="icon-yahoo"></i>
+                                <i class="icon-yahoo"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+        </footer><!-- #footer end -->
+    </div>
+    @*<environment names="Development">*@
+    <script src="~/lib/json2/json2.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js" asp-append-version="true"></script>
+    <script src="~/lib/moment/min/moment-with-locales.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js" asp-append-version="true"></script>
+    <script src="~/lib/blockUI/jquery.blockUI.js" asp-append-version="true"></script>
+    <script src="~/lib/toastr/toastr.js" asp-append-version="true"></script>
+    <script src="~/lib/sweetalert/dist/sweetalert.min.js" asp-append-version="true"></script>
+    <script src="~/lib/spin.js/spin.js" asp-append-version="true"></script>
+    <script src="~/lib/spin.js/jquery.spin.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap-select/dist/js/bootstrap-select.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-slimscroll/jquery.slimscroll.js" asp-append-version="true"></script>
+    <script src="~/lib/Waves/dist/waves.js" asp-append-version="true"></script>
+    <script src="~/lib/push.js/push.js" asp-append-version="true"></script>
+    <script src="~/lib/Numeral-js/numeral.js" asp-append-version="true"></script>
+    <script src="~/lib/Numeral-js/locales.js" asp-append-version="true"></script>
+    <script src="~/js/components/bs-select.js" asp-append-version="true"></script>
+    <script src="~/js/plugins.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/abp.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    <script src="~/js/functions.js" asp-append-version="true"></script>
+    @if (CultureInfo.CurrentUICulture.Name != "en")
+    {
+        <script src="~/lib/jquery-validation/src/localization/messages_@Html.Raw(CultureInfo.CurrentUICulture.Name.Replace("-", "_") + ".js")" asp-append-version="true"></script>
+    }
+    @*</environment>
+        <environment names="Staging,Production">
+            <script src="~/view-resources/Views/_Bundles/shared-layout.min.js" asp-append-version="true"></script>
+        </environment>*@
+    <script>
+    // Localizing js plugins
+    moment.locale('@CultureInfo.CurrentUICulture.Name');
+    numeral.locale('@CultureInfo.CurrentUICulture.Name');
+    </script>
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/AbpServiceProxies/GetAll?v=@(AppTimes.StartupTime.Ticks)" type="text/javascript"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(AppTimes.StartupTime.Ticks)" type="text/javascript"></script>
+    <script src="~/lib/signalr-client/signalr.min.js" asp-append-version="true"></script>
+    <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js" asp-append-version="true"></script>
+    @WebResourceManager.RenderScripts()
+    <!-- View specific scripts -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewData["Title"] = "PlacementMatches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Page Title
+============================================= -->
+<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('/images/parallax/8.jpg'); background-size: cover; padding: 80px 0;" data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -300px;">
+
+    <div class="container clearfix">
+        <h1>Lol eloboost</h1>
+        <span>Bu sayfadan hizmetlerimizi seçebilirsiniz</span>
+    </div>
+
+</section><!-- #page-title end -->
+
+<section id="content">
+    <div class="content-wrap  bottompadding">
+
+        @Html.Partial("_Boosters")
+
+        <div class="container clearfix topmargin-lg bottommargin">
+            <h2 class="text-center">Placement Matches</h2>
+            <p class="text-center">We will perform your placement matches (10 games from unranked, 70% win rate guaranteed!)</p>
+
+
+            <div class="row boostArea">
+                <div class="col-md-4">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>1</i></a>
+                        </div>
+                        <h3>LAST SEASON STANDING</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <div class="badgeLig">
+                                <img class="bronze" src="https://eloboost24.eu/images/tools/badges/bronze_fit.png">
+                                <img class="silver" src="https://eloboost24.eu/images/tools/badges/silver_fit.png">
+                                <img class="gold" src="https://eloboost24.eu/images/tools/badges/gold_fit.png">
+                                <img class="platinum" src="https://eloboost24.eu/images/tools/badges/platinum_fit.png">
+                                <img class="diamond" src="https://eloboost24.eu/images/tools/badges/master_fit.png">
+                                <img class="master" src="https://eloboost24.eu/images/tools/badges/diamond_fit.png">
+                                <img class="challenger" src="https://eloboost24.eu/images/tools/badges/challenger_fit.png">
+                            </div>
+                            <div class="selectsArea">
+                                <select class="selectpicker league">
+                                    <option>Bronze</option>
+                                    <option>Silver</option>
+                                    <option>Gold</option>
+                                    <option>Platinum</option>
+                                    <option>Diamond</option>
+                                    <option>Master</option>
+                                    <option>Challenger</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>2</i></a>
+                        </div>
+                        <h3>YOUR Server</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+
+                            <div class="selectsArea">
+                                <select class="selectpicker">
+                                    <option value="EUNE">Europe Nordic &amp; East</option>
+                                    <option value="EUW">Europe West</option>
+                                    <option value="NA">North America</option>
+                                    <option value="RU">Russia</option>
+                                    <option value="OCE">Oceania</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="KR">Korea</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="LAN">Latin America North</option>
+                                    <option value="LAS">Latin America South</option>
+                                    <option value="TR">Turkey</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="feature-box fbox-small fbox-light fbox-effect" style="margin-top:40px;">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>4</i></a>
+                        </div>
+                        <h3>TYPE OF QUEUE</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <select class="selectpicker">
+                                <option value="flex_rift">Flex Summoners Rift (5v5)</option>
+                                <option value="solo_duo">Solo/Duo (5v5)</option>
+                                <option value="flex_treeline">Flex Twisted Treeline (3v3)</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-box fbox-small fbox-light fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>3</i></a>
+                        </div>
+                        <h3>TYPE OF SERVICE</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <div class="selectsArea">
+                                <select class="selectpicker">
+                                    <option>Solo</option>
+                                    <option>Duo</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="feature-box fbox-small fbox-light fbox-effect" style="margin-top:40px;">
+                        <div class="fbox-icon">
+                            <a href="javascript:;"><i>5</i></a>
+                        </div>
+                        <h3>NUMBER OF GAMES</h3>
+                        <div style="clear:both;"></div>
+                        <div class="fboxContent">
+                            <input type="text" class="form-control" value="3" style="width:220px;color: #212529; background-color: #f8f9fa; border-color: #f8f9fa;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+@section scripts
+    {
+
+    <script>
+	$('.league').change(function(e,i){
+		var selected = this.selectedIndex;
+		var logos = $(this).parents('.fboxContent').find('.badgeLig img');
+		$(logos).hide();
+		$(logos).eq(selected).fadeIn();
+
+	});
+    </script>
+}

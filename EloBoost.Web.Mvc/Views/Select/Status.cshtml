@@ -1,0 +1,63 @@
+﻿@using EloBoost.Models.Boosters
+@using EloBoost.Web.Startup
+@using Humanizer
+@model IReadOnlyList<OrderListViewModel>
+@{
+    ViewBag.CurrentPageName = PageNames.Select;
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("Users")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("FullName")</th>
+                            <th>@L("BoostType")</th>
+                            <th>@L("OrderStatus")</th>
+                            <th>@L("CreateDate")</th>
+                            <th>@L("UpdateDate")</th>
+                            <th>@L("Actions")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Username</td>
+                                <td>@item.BoostType</td>
+                                <td>@item.OrderStatus</td>
+                                <td>@(item.CreationTime < DateTime.Now.AddDays(-7) ? item.CreationTime.ToString("dd.MM.yyyy") : item.CreationTime.Humanize())</td>
+                                <td>@(item.LastModificationTime.HasValue && item.LastModificationTime < DateTime.Now.AddDays(-7) ? item.LastModificationTime.Value.ToString("dd.MM.yyyy") : item.LastModificationTime.Humanize())</td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block" data-item-id="@item.Id" data-toggle="modal" data-target="#itemEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block" data-item-id="@item.Id"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

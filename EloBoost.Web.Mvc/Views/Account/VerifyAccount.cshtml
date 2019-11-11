@@ -1,0 +1,47 @@
+﻿@using Abp.Authorization.Users
+@model EloBoost.Models.Account.LoginFormViewModel
+@section Styles
+    {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/view-resources/Views/Account/Login.css" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/view-resources/Views/Account/Login.min.css" asp-append-version="true" />
+    </environment>
+}
+@section Scripts
+    {
+    <environment names="Development">
+        <script src="~/view-resources/Views/Shared/Forms.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Shared/Forms.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="card" id="FormArea">
+    <div class="body">
+        <form id="AjaxForm" asp-action="VerifyAccount" method="post">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">
+                    <i class="fa fa-warning"></i> @ViewBag.ErrorMessage
+                </div>
+            }
+            <div class="msg text-left">@L("ForgotPasswordMessage")</div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">security</i>
+                </span>
+                <div class="form-line">
+                    <input autocomplete="off" type="text" class="form-control" name="code" placeholder="@L("Code")" required autofocus maxlength="@AbpUserBase.MaxEmailAddressLength">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a asp-action="Login" class="btn btn-default waves-effect">@L("Back")</a>
+                    <button id="btnReset" class="btn bg-pink waves-effect" type="submit">@L("VerifyAccount")</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

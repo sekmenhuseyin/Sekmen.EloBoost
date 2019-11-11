@@ -1,0 +1,21 @@
+﻿.boostArea .feature-box { padding: 0 0 0 60px; }
+.boostArea .fbox-icon { height: 50px; width: 50px; }
+    .boostArea .fbox-icon i { line-height: 50px !important; }
+.boostArea .feature-box .fboxContent { margin-left: -55px; margin-top: 30px; }
+.boostArea .feature-box h3 { padding-top: 10px; }
+.boostArea .feature-box .bootstrap-select { margin-top: 20px; }
+
+.boostArea .feature-box .selectsArea { }
+.boostArea .feature-box .badgeLig { float: right; margin-top: 15px; width: 120px; }
+    .boostArea .feature-box .badgeLig img { display: none; }
+    .boostArea .feature-box .badgeLig .bronze { display: inline-block; }
+
+
+.dropdown-menu { }
+
+.dropdown-item:hover, .dropdown-item:focus { background-color: #ebebeb; }
+
+.bootstrap-select.btn-group .dropdown-menu li a { display: block; width: 100%; padding: 0.25rem 1.5rem; clear: both; font-weight: 400; color: #212529; text-align: inherit; white-space: nowrap; background-color: transparent; border: 0; font-size: 14px; }
+
+    .bootstrap-select.btn-group .dropdown-menu li a:hover,
+    .bootstrap-select.btn-group .dropdown-menu li a:focus { color: #16181b; text-decoration: none; background-color: #f8f9fa; }

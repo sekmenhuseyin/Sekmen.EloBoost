@@ -1,0 +1,498 @@
+﻿@using EloBoost.Web.Startup
+@{
+    ViewBag.CurrentPageName = PageNames.Home; // The menu item will be active for this page.
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section styles
+    {
+    <style>
+        .parallaxHeight { min-height: 530px; }
+        .revo-slider-emphasis-text { font-size: 64px; font-weight: 700; letter-spacing: -1px; font-family: 'Raleway', sans-serif; padding: 15px 20px; border-top: 2px solid #FFF; border-bottom: 2px solid #FFF; }
+        .revo-slider-desc-text { font-size: 20px; font-family: 'Lato', sans-serif; width: 650px; text-align: center; line-height: 1.5; }
+        .revo-slider-caps-text { font-size: 16px; font-weight: 400; letter-spacing: 3px; font-family: 'Raleway', sans-serif; }
+        .tp-video-play-button { display: none !important; }
+        .tp-caption { white-space: nowrap; }
+    </style>
+    <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+}
+
+<section id="slider" class="slider-element slider-parallax revslider-wrap clearfix">
+    <div class="slider-parallax-inner" style="top: 45px;">
+        <!--
+        #################################
+            - THEMEPUNCH BANNER -
+        #################################
+        -->
+        <div id="rev_slider_k_fullwidth_wrapper" class="rev_slider_wrapper fullwidth-container" style="padding:0px;">
+            <!-- START REVOLUTION SLIDER 5.1.4 fullwidth mode -->
+            <div id="rev_slider_k_fullwidth" class="rev_slider fullwidthbanner" style="display:none;" data-version="5.1.4">
+                <ul>
+                    <!-- SLIDE  -->
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/ken-2-thumb.jpg" data-delay="15000" data-saveperformance="off" data-title="Unlimited Possibilities">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/slider/rev/ken-2.jpg" alt="kenburns6" data-bgposition="center bottom" data-bgpositionend="center top" data-kenburns="on" data-duration="25000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="140" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
+                             data-x="middle" data-hoffset="0"
+                             data-y="top" data-voffset="185"
+                             data-fontsize="['60','50','50','40']"
+                             data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1200"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="z-index: 3; color: #333; white-space: nowrap;">SEZON SONU GELDİ!</div>
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-desc-text"
+                             data-x="middle" data-hoffset="0"
+                             data-y="top" data-voffset="295"
+                             data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-lineheight="['30','30','34','26']"
+                             data-width="['750','750','480','360']"
+                             data-start="1400"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-textAlign="center"
+                             data-endeasing="Power4.easeIn" style="z-index: 3; color: #333; max-width: 650px; white-space: normal;">Boost yaptırmak için tam zamanı, geç kalmadan hemen üye ol!</div>
+
+                        <div class="tp-caption ltl tp-resizeme"
+                             data-x="middle" data-hoffset="0"
+                             data-y="top" data-voffset="405"
+                             data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1550"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="/Account/Register" class="button  button-large button-rounded tright nomargin"><span>Kayıt ol</span><i class="icon-angle-right"></i></a></div>
+
+                    </li>
+
+                    <li class="dark" data-transition="zoomout" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/bg1-thumb.jpg" data-saveperformance="off" data-title="Fixed-Size Video">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/slider/rev/bg1.jpg" alt="citybg" data-lazyload="images/slider/rev/bg1.jpg" data-bgposition="center top" data-scale="cover" data-bgrepeat="no-repeat">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption ltl tp-resizeme"
+                             data-x="['left','left','left','left']" data-hoffset="['670','670','100','0']"
+                             data-y="['top','top','bottom','bottom']" data-voffset="['45','45','0','0']"
+                             data-transform_in="x:250;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:400;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                             data-speed="400"
+                             data-start="1000"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn"><img src="images/services/imac2.png" alt="imac"></div>
+
+                        <div class="tp-caption ltl tp-resizeme"
+                             data-x="['left','left','right','right']" data-hoffset="['1000','1000','180','0']"
+                             data-y="['top','top','bottom','bottom']" data-voffset="['320','320','0','0']"
+                             data-transform_in="x:0;y:100;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:400;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                             data-speed="400"
+                             data-start="1200"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn"><img src="images/services/iphone3.png" alt="iphone"></div>
+
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
+                             data-x="['left','left','left','left']" data-hoffset="['17','17','17','17']"
+                             data-y="['top','top','top','top']" data-voffset="['180','180','180','65']"
+                             data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-fontsize="['40','40','40','32']"
+                             data-speed="800"
+                             data-start="1200"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="font-size: 40px; white-space: nowrap;">Bizimle 7/24 iletişime geçebilirsiniz!</div>
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-desc-text tleft"
+                             data-x="['left','left','left','left']" data-hoffset="['20','20','20','20']"
+                             data-y="['top','top','top','top']" data-voffset="['280','280','280','165']"
+                             data-width="['550','550','480','400']"
+                             data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1400"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="max-width: 550px; white-space: normal;">Size iyi hizmet verebilmek için müşteri temsilcilerimiz özenle seçilmiştir.</div>
+
+                        <div class="tp-caption ltl tp-resizeme"
+                             data-x="['left','left','left','left']" data-hoffset="['20','20','20','20']"
+                             data-y="['top','top','top','top']" data-voffset="['385','385','385','270']"
+                             data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1550"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn"><a href="/Contact" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Mesaj Gönder</span> <i class="icon-angle-right"></i></a></div>
+
+                    </li>
+                    <li class="dark" data-transition="zoomout" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/bg2-thumb.jpg" data-saveperformance="off" data-title="Fixed-Size Video">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/slider/rev/bg2.jpg" alt="kenburns6" data-bgposition="left bottom" data-bgpositionend="right top" data-kenburns="on" data-duration="20000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <div class="tp-caption"
+                             data-x="['left','left','left','left']" data-hoffset="['20','20','30','30']"
+                             data-y="['top','top','top','top']" data-voffset="['130','130','130','130']"
+                             data-transform_in="x:0;y:0;z:0;rotationZ:0;scaleX:0.6;scaleY:0.6;skewX:0;skewY:0;s:850;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                             data-speed="850"
+                             data-start="1200"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-videowidth="['600','500','650','420']"
+                             data-videoheight="['340','283','368','238']"
+                             data-endeasing="Power4.easeIn">a</div>
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-caps-text uppercase"
+                             data-x="['left','left','left','left']" data-hoffset="['675','575','30','30']"
+                             data-y="['top','top','top','top']" data-voffset="['165','165','530','430']"
+                             data-transform_in="x:140;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1000"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="white-space: nowrap;">Need to show Videos?</div>
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
+                             data-x="['left','left','left','left']" data-hoffset="['672','572','30','30']"
+                             data-y="['top','top','top','top']" data-voffset="['180','180','555','455']"
+                             data-fontsize="['56','50','40','30']"
+                             data-transform_in="x:140;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1200"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="font-size: 56px; white-space: nowrap;">Embedded Videos</div>
+
+                        <div class="tp-caption ltl tp-resizeme revo-slider-desc-text tleft"
+                             data-x="['left','left','left','left']" data-hoffset="['675','575','30','30']"
+                             data-y="['top','top','top','top']" data-voffset="['280','280','655','555']"
+                             data-transform_in="x:140;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1400"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn" style="max-width: 450px; white-space: normal;">Show off your Youtube or Vimeo Videos in Style with an Autoplay Option.</div>
+
+                        <div class="tp-caption ltl tp-resizeme"
+                             data-x="['left','left','left','left']" data-hoffset="['675','575','30','30']"
+                             data-y="['top','top','top','top']" data-voffset="['385','385','760','630']"
+                             data-transform_in="x:140;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+                             data-speed="800"
+                             data-start="1550"
+                             data-easing="easeOutQuad"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.1"
+                             data-endspeed="1000"
+                             data-endeasing="Power4.easeIn"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Embed Now</span> <i class="icon-angle-right"></i></a></div>
+
+                    </li>
+                </ul>
+            </div>
+        </div><!-- END REVOLUTION SLIDER -->
+    </div>
+</section>
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap nobottompadding">
+
+        <div class="promo promo-light promo-full bottommargin-lg header-stick notopborder nomargin">
+            <div class="container clearfix">
+                <h3>Booster başvurularınız için bu formu dordurabilirsiniz.</h3>
+                <span>We strive to provide Our Customers with Top Notch Support to make their Theme Experience Wonderful</span>
+                <a href="#" class="button button-dark button-xlarge button-rounded">Start Browsing</a>
+            </div>
+        </div>
+        <div class="section dark nomargin">
+            <div class="container clearfix ">
+                <div class="row clearfix">
+
+                    <div class="col-xl-5">
+                        <div class="heading-block topmargin">
+                            <h1>BİZ KİMİZ?</h1>
+                        </div>
+                        <p class="lead">Create a website that you are gonna be proud of. Be it Business, Portfolio, Agency, Photography, eCommerce &amp; much more.</p>
+                    </div>
+
+                    <div class="col-xl-7">
+
+                        <div style="position: relative; margin-bottom: -60px;" class="ohidden" data-height-xl="426" data-height-lg="567" data-height-md="470" data-height-md="287" data-height-xs="183">
+                            <img src="https://www.tiltreport.com/media/admin/2018/02/26/league-of-legends-in-game-voice-chat-pbe-launch-1.jpg" style="position: absolute; top: 0; left: 0;" data-animate="fadeInUp" data-delay="100" alt="Chrome">
+                            <!-- <img src="images/services/main-fmobile.png" style="position: absolute; top: 0; left: 0;" data-animate="fadeInUp" data-delay="400" alt="iPad"> -->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="section notopmargin nobottommargin">
+            <div class="container clearfix">
+                <h2 class="text-center notopmargin">Services</h2>
+
+                <div class="col_one_fourth nobottommargin">
+                    <div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-gamepad i-alt"></i></a>
+                        </div>
+                        <h3>Lol eloboost<span class="subtitle">Lorem ipsum dolor sit</span></h3>
+                    </div>
+                </div>
+
+                <div class="col_one_fourth nobottommargin">
+                    <div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-microphone2 i-alt"></i></a>
+                        </div>
+                        <h3>Koçluk<span class="subtitle">Officia ipsam laudantium</span></h3>
+                    </div>
+                </div>
+
+                <div class="col_one_fourth nobottommargin">
+                    <div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-cart i-alt"></i></a>
+                        </div>
+                        <h3>Hesap Satışı<span class="subtitle">Laudantium cum dignissimos</span></h3>
+                    </div>
+                </div>
+
+                <div class="col_one_fourth nobottommargin col_last">
+                    <div class="feature-box fbox-effect fbox-center fbox-outline fbox-dark nobottomborder">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-select i-alt"></i></a>
+                        </div>
+                        <h3>unranked hesap<span class="subtitle">Perferendis accusantium quae</span></h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <a href="/Pricing" class="button button-full button-dark center tright nobottommargin">
+            <div class="container clearfix">
+                Fiyat lsitesi için <strong>tıklayınız</strong> <i class="icon-caret-right" style="top:4px;"></i>
+            </div>
+        </a>
+
+
+        <div class="section parallax dark nobottommargin notopmargin" style="background-image: url('images/services/home-testi-bg.jpg'); padding: 100px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+            <!-- <div class="section dark nobottommargin notopmargin" > -->
+
+            <div class="heading-block center">
+                <h3>Müşteri Yorumları</h3>
+            </div>
+
+            <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+                <div class="flexslider">
+                    <div class="slider-wrap">
+                        <div class="slide">
+                            <div class="testi-image">
+                                <a href="/Testimonails"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+                            </div>
+                            <div class="testi-content">
+                                <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+                                <div class="testi-meta">
+                                    Steve Jobs
+                                    <span>Apple Inc.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="testi-image">
+                                <a href="/Testimonails"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+                            </div>
+                            <div class="testi-content">
+                                <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+                                <div class="testi-meta">
+                                    Collis Ta'eed
+                                    <span>Envato Inc.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="testi-image">
+                                <a href="/Testimonails"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+                            </div>
+                            <div class="testi-content">
+                                <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+                                <div class="testi-meta">
+                                    John Doe
+                                    <span>XYZ Inc.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="section notopmargin nobottommargin">
+            <div class="container clearfix">
+                <h2 class="text-center">Adım Adım</h2>
+                <ul class="process-steps bottommargin clearfix">
+                    <li>
+                        <a href="#ptab1" class="i-circled i-bordered i-alt divcenter">1</a>
+                        <h5>Kayıt olun</h5>
+                    </li>
+                    <li>
+                        <a href="#ptab2" class="i-circled i-bordered i-alt divcenter">2</a>
+                        <h5>Giriş Yapın</h5>
+                    </li>
+                    <li class="active">
+                        <a href="#ptab3" class="i-circled i-bordered i-alt divcenter">3</a>
+                        <h5>Güvenli ödemenizi yapın</h5>
+                    </li>
+                    <li>
+                        <a href="#ptab4" class="i-circled i-bordered i-alt divcenter">4</a>
+                        <h5>Anında istediğiniz lige ulaşın!</h5>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="section parallax dark nomargin noborder parallaxHeight" style="background-image: url('https://crema.com.tr/media/1096/counter.jpg');background-size:cover !important;background-color:#000;" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -600px;">
+            <div class="vertical-middle">
+                <div class="container clearfix">
+                    <div class="row">
+                        <div class="col-lg-3 bottommargin-sm center " data-animate="bounceIn" data-delay="200">
+                            <i class="fa fa-users fa-4x divcenter nobottommargin "></i>
+                            <div class="counter counter-large counter-lined"><span data-from="100" data-to="1258" data-refresh-interval="10" data-speed="2000"></span></div>
+                            <h5>Üyeler</h5>
+                        </div>
+                        <div class="col-lg-3 bottommargin-sm center" data-animate="bounceIn" data-delay="200">
+                            <i class="fa fa-check fa-4x divcenter nobottommargin"></i>
+                            <div class="counter counter-large counter-lined"><span data-from="100" data-to="507" data-refresh-interval="10" data-speed="2000"></span></div>
+                            <h5>Yapılan boostlar</h5>
+                        </div>
+                        <div class="col-lg-3 bottommargin-sm center" data-animate="bounceIn" data-delay="400">
+                            <i class="fa fa-user-secret fa-4x divcenter nobottommargin"></i>
+                            <div class="counter counter-large counter-lined"><span data-from="100" data-to="30" data-refresh-interval="10" data-speed="2000"></span></div>
+                            <h5>Boosterlar</h5>
+                        </div>
+                        <div class="col-lg-3 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
+                            <i class="fa fa-shopping-cart fa-4x divcenter nobottommargin"></i>
+                            <div class="counter counter-large counter-lined"><span data-from="100" data-to="126" data-refresh-interval="10" data-speed="2000"></span></div>
+                            <h5>Hesaplar</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- #content end -->
+
+
+@section scripts
+    {
+
+    <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+    <script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+
+    <script>
+
+		var tpj=jQuery;
+		tpj.noConflict();
+
+		tpj(document).ready(function() {
+
+			var apiRevoSlider = tpj('#rev_slider_k_fullwidth').show().revolution(
+			{
+				sliderType:"standard",
+				sliderLayout:"fullwidth",
+				delay:9000,
+				navigation: {
+					arrows:{enable:true}
+				},
+				responsiveLevels:[1240,1024,778,480],
+				visibilityLevels:[1240,1024,778,480],
+				gridwidth:[1240,1024,778,480],
+				gridheight:[600,768,960,720],
+			});
+
+			apiRevoSlider.bind("revolution.slide.onloaded",function (e) {
+				setTimeout( function(){ SEMICOLON.slider.sliderParallaxDimensions(); }, 400 );
+			});
+
+			apiRevoSlider.bind("revolution.slide.onchange",function (e,data) {
+				SEMICOLON.slider.revolutionSliderMenu();
+			});
+
+		});
+
+    </script>
+
+}

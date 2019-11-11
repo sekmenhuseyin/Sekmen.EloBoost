@@ -1,0 +1,44 @@
+﻿@using EloBoost.Models.Boosters
+@using EloBoost.Shared.Enums
+@using EloBoost.Web.Startup
+@model IReadOnlyList<OrderListViewModel>
+@{
+    ViewBag.CurrentPageName = PageNames.Orders;
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("Orders")
+                </h2>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a role="tab" data-toggle="tab" href="#tabWaiting" aria-controls="tabWaiting">@L("Waiting")</a></li>
+                    <li role="presentation"><a role="tab" data-toggle="tab" href="#tabStarted" aria-controls="tabStarted">@L("Started")</a></li>
+                    <li role="presentation"><a role="tab" data-toggle="tab" href="#tabFinished" aria-controls="tabFinished">@L("Finished")</a></li>
+                    <li role="presentation"><a role="tab" data-toggle="tab" href="#tabCanceled" aria-controls="tabCanceled">@L("Canceled")</a></li>
+                    <li role="presentation"><a role="tab" data-toggle="tab" href="#tabReturned" aria-controls="tabReturned">@L("Returned")</a></li>
+                </ul>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="tabWaiting">@await Html.PartialAsync("_Table", Model.Where(m => m.OrderStatus == OrderStatus.Created || m.OrderStatus == OrderStatus.RequestActive || m.OrderStatus == OrderStatus.WaitingPaymentApproval).ToList())</div>
+                    <div role="tabpanel" class="tab-pane" id="tabStarted">@await Html.PartialAsync("_Table", Model.Where(m => m.OrderStatus == OrderStatus.BoostStarted).ToList())</div>
+                    <div role="tabpanel" class="tab-pane" id="tabFinished">@await Html.PartialAsync("_Table", Model.Where(m => m.OrderStatus == OrderStatus.BoostFinished).ToList())</div>
+                    <div role="tabpanel" class="tab-pane" id="tabCanceled">@await Html.PartialAsync("_Table", Model.Where(m => m.OrderStatus == OrderStatus.WaitingOrderCancel || m.OrderStatus == OrderStatus.OrderCanceled).ToList())</div>
+                    <div role="tabpanel" class="tab-pane" id="tabReturned">@await Html.PartialAsync("_Table", Model.Where(m => m.OrderStatus == OrderStatus.BoostDisapproved || m.OrderStatus == OrderStatus.Deleted).ToList())</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

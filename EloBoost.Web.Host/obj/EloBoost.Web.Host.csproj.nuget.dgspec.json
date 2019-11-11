@@ -1,0 +1,510 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Host\\EloBoost.Web.Host.csproj": {}
+  },
+  "projects": {
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Application\\EloBoost.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Application\\EloBoost.Application.csproj",
+        "projectName": "EloBoost.Application",
+        "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Application\\EloBoost.Application.csproj",
+        "packagesPath": "C:\\Users\\ozer\\.nuget\\packages\\",
+        "outputPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj"
+              },
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81",
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj",
+        "projectName": "EloBoost.Core",
+        "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj",
+        "packagesPath": "C:\\Users\\ozer\\.nuget\\packages\\",
+        "outputPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Abp.AutoMapper": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Abp.ZeroCore.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Castle.Windsor.MsDependencyInjection": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81",
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.EntityFrameworkCore\\EloBoost.EntityFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.EntityFrameworkCore\\EloBoost.EntityFramework.csproj",
+        "projectName": "EloBoost.EntityFramework",
+        "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.EntityFrameworkCore\\EloBoost.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\ozer\\.nuget\\packages\\",
+        "outputPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.EntityFrameworkCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Core\\EloBoost.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81",
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj",
+        "projectName": "EloBoost.Shared",
+        "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\EloBoost.Shared.csproj",
+        "packagesPath": "C:\\Users\\ozer\\.nuget\\packages\\",
+        "outputPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Core\\EloBoost.Web.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Core\\EloBoost.Web.Core.csproj",
+        "projectName": "EloBoost.Web.Core",
+        "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Core\\EloBoost.Web.Core.csproj",
+        "packagesPath": "C:\\Users\\ozer\\.nuget\\packages\\",
+        "outputPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Application\\EloBoost.Application.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Application\\EloBoost.Application.csproj"
+              },
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.EntityFrameworkCore\\EloBoost.EntityFramework.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.EntityFrameworkCore\\EloBoost.EntityFramework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Abp.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Abp.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Abp.ZeroCore": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81",
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Host\\EloBoost.Web.Host.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Host\\EloBoost.Web.Host.csproj",
+        "projectName": "EloBoost.Web.Host",
+        "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Host\\EloBoost.Web.Host.csproj",
+        "packagesPath": "C:\\Users\\ozer\\.nuget\\packages\\",
+        "outputPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Host\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Core\\EloBoost.Web.Core.csproj": {
+                "projectPath": "E:\\MEGA\\About Company\\EloBoost\\EloBoost.Web.Core\\EloBoost.Web.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Abp.Castle.Log4Net": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Castle.LoggingFacility.MsLogging": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Server.IISIntegration": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Server.Kestrel": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.StaticFiles": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.BrowserLink": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81",
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

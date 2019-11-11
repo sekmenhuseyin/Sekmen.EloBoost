@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Pay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <environment names="Development">
+        <link rel="stylesheet" href="~/view-resources/Views/Payment/payment.css" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/view-resources/Views/Payment/payment.min.css" asp-append-version="true" />
+    </environment>
+}
+@section scripts{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Shared/Forms.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Shared/Forms.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section id="content">
+    <div class="content-wrap" id="﻿FormArea">
+        <div class="container clearfix">
+            <div class="row clearfix">
+                <div class="col_one_fourth"></div>
+                <div class="col_half">
+                    <h2>Select Payment Method</h2>
+                    <form id="AjaxForm" asp-action="Pay" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="FormSecurity" />
+                        <input type="hidden" name="Guid" value="@ViewBag.id" />
+
+                        <div class="tabs tabs-bordered tabs-justify clearfix">
+                            <ul class="tab-nav clearfix">
+                                <li><a href="#tabs-1"><img src="/images/Payment/credit-card.png" alt="Credit Card" width="32" height="32" /><br />Credit Card</a></li>
+                                <li><a href="#tabs-2"><img src="/images/Payment/net-banking.png" alt="Net Banking" width="74" height="34" /><br />Net Banking</a></li>
+                                <li><a href="#tabs-3"><img src="/images/Payment/paypal.png" alt="PayPal" width="32" height="31" /><br />PayPal</a></li>
+                            </ul>
+                            <div class="tab-container">
+                                <div class="tab-content clearfix" id="tabs-1">
+                                    <!-- CREDIT CARD FORM STARTS HERE -->
+                                    <div class="panel panel-default credit-card-box">
+                                        <div class="panel-heading display-table">
+                                            <div class="row display-tr">
+                                                <h3 class="panel-title display-td">Payment Details</h3>
+                                                <div class="display-td">
+                                                    <img class="img-responsive pull-right" src="https://i76.imgup.net/accepted_c22e0.png" alt="visa">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label for="cardName">NAME ON CARD</label>
+                                                        <div class="input-group">
+                                                            <input type="text"
+                                                                   class="form-control"
+                                                                   name="cardName"
+                                                                   placeholder="Name Surname"
+                                                                   required autofocus />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group">
+                                                        <label for="cardNumber">CARD NUMBER</label>
+                                                        <div class="input-group">
+                                                            <input type="tel"
+                                                                   class="form-control"
+                                                                   name="cardNumber"
+                                                                   placeholder="Card Number"
+                                                                   autocomplete="cc-number"
+                                                                   required autofocus />
+                                                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-7 col-md-7">
+                                                    <div class="form-group">
+                                                        <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                                        <input type="tel"
+                                                               class="form-control"
+                                                               name="cardExpiry"
+                                                               placeholder="MM / YY"
+                                                               autocomplete="cc-exp"
+                                                               required />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-5 col-md-5 pull-right">
+                                                    <div class="form-group">
+                                                        <label for="cardCVC">CV CODE</label>
+                                                        <input type="tel"
+                                                               class="form-control"
+                                                               name="cardCVC"
+                                                               placeholder="CVC"
+                                                               autocomplete="cc-csc"
+                                                               required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <input type="submit" name="submit" value="Ödeme Yap" class="btn btn-block btn-primary" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CREDIT CARD FORM ENDS HERE -->
+                                </div>
+                            </div>
+                            <div class="tab-content clearfix" id="tabs-2">
+                                tabs-2
+                            </div>
+                            <div class="tab-content clearfix" id="tabs-3">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <!-- Identify your business so that you can collect the payments. -->
+                                        <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
+
+                                        <!-- Specify a Buy Now button. -->
+                                        <input type="hidden" name="cmd" value="_xclick">
+
+                                        <!-- Specify details about the item that buyers will purchase. -->
+                                        <input type="hidden" name="item_name" value="Hot Sauce-12oz. Bottle">
+                                        <input type="hidden" name="amount" value="5.95">
+                                        <input type="hidden" name="currency_code" value="USD">
+
+                                        <!-- Display the payment button. -->
+                                        <input type="image" name="submit" border="0"
+                                               src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                                               alt="Buy Now">
+                                        <img alt="" border="0" width="1" height="1"
+                                             src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col_one_fourth col_last"></div>
+            </div>
+        </div>
+    </div>
+</section><!-- #content end -->

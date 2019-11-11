@@ -1,0 +1,91 @@
+﻿@using EloBoost.Shared.Enums
+@using EloBoost.Shared.Extensions
+@model IEnumerable<EloBoost.Boosters.Dto.DtoOrders>
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    decimal totalAmount = 0;
+}
+<!-- Page Title============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Cart</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Shop</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+<!-- Content============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="table-responsive">
+                <table class="table cart">
+                    <thead>
+                        <tr>
+                            <th class="cart-product-type">Boost Type</th>
+                            <th class="cart-product-name">League Points</th>
+                            <th class="cart-product-server">Server Name</th>
+                            <th class="cart-product-price">Amount</th>
+                            <th class="cart-product-remove">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            totalAmount += item.Amount;
+                            <tr class="cart_item">
+                                <td class="cart-product-type">
+                                    <span>@item.BoostType.GetDisplayName()</span>
+                                </td>
+                                <td class="cart-product-name">
+                                    <a href="javascript:;">@item.CurrentPoints.GetDisplayName()</a>
+                                </td>
+                                <td class="cart-product-name">
+                                    <span>@item.ServerName.GetDisplayName()</span>
+                                </td>
+                                <td class="cart-product-price">
+                                    <span class="amount">@item.Amount ₺</span>
+                                </td>
+                                <td class="cart-product-remove">
+                                    <a href="javascript:;" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                                </td>
+                            </tr>
+                        }
+                        <tr class="cart_item">
+                            <td><strong>Cart Totals</strong></td>
+                            <td colspan="2"></td>
+                            <td class="cart-product-subtotal">
+                                <span class="amount">@totalAmount ₺</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="cart_item">
+                            <td colspan="6">
+                                <div class="row clearfix">
+                                    <div class="col-lg-4 col-4 nopadding">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-7">
+                                                <input type="text" value="" class="sm-form-control" placeholder="Enter Coupon Code" />
+                                            </div>
+                                            <div class="col-lg-4 col-5">
+                                                <a href="#" class="button button-3d button-black nomargin">Apply Coupon</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-8 nopadding">
+                                        <a href="/Cart/Checkout" class="button button-3d notopmargin fright">Proceed to Checkout</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section><!-- #content end -->

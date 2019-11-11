@@ -1,0 +1,11 @@
+﻿@using EloBoost.Sessions.Dto
+@model UserLoginInfoDto
+@if (Model == null)
+{
+    <li><a href="~/Account/Login">@L("LogIn")</a></li>
+}
+else
+{
+    <li><a href="~/DashBoard">@L("Dashboard")</a></li>
+    <li><a href="~/Account/Logout">@L("Logout")</a></li>
+}

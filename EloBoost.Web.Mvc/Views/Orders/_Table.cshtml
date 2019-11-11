@@ -1,0 +1,51 @@
+﻿@using EloBoost.Models.Boosters
+@using EloBoost.Shared.Extensions
+@using Humanizer
+@model IReadOnlyList<OrderListViewModel>
+<table class="table">
+    <thead>
+        <tr>
+            @if (ViewBag.isUser)
+            {
+                <th>@L("Booster")</th>
+            }
+            else
+            {
+                <th>@L("Client")</th>
+            }
+            <th>@L("BoostType")</th>
+            <th>@L("OrderStatus")</th>
+            <th>@L("CreateDate")</th>
+            <th>@L("UpdateDate")</th>
+            <th>@L("Actions")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (OrderListViewModel item in Model)
+        {
+            <tr>
+                @if (!ViewBag.isUser || item.CreatorUserId.ToLong() != item.UserId)
+                {
+                    <td>@item.Username</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                <td>@item.BoostType</td>
+                <td>@item.OrderStatus</td>
+                <td>@(item.CreationTime < DateTime.Now.AddDays(-7) ? item.CreationTime.ToString("dd.MM.yyyy") : item.CreationTime.Humanize())</td>
+                <td>@(item.LastModificationTime.HasValue && item.LastModificationTime < DateTime.Now.AddDays(-7) ? item.LastModificationTime.Value.ToString("dd.MM.yyyy") : item.LastModificationTime.Humanize())</td>
+                <td class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="#" class="waves-effect waves-block" data-item-id="@item.Id" data-toggle="modal" data-target="#itemEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                        <li><a href="#" class="waves-effect waves-block" data-item-id="@item.Id"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

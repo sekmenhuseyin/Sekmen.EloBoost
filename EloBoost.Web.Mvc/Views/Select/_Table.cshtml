@@ -1,0 +1,38 @@
+﻿@using EloBoost.Models.Boosters
+@using EloBoost.Shared.Enums
+@using Humanizer
+@model IReadOnlyList<OrderListViewModel>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@L("FullName")</th>
+            <th>@L("BoostType")</th>
+            <th>@L("OrderStatus")</th>
+            <th>@L("CreateDate")</th>
+            <th>@L("UpdateDate")</th>
+            <th>@L("Actions")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Username</td>
+                <td>@item.BoostType</td>
+                <td>@item.OrderStatus</td>
+                <td>@(item.CreationTime < DateTime.Now.AddDays(-7) ? item.CreationTime.ToString("dd.MM.yyyy") : item.CreationTime.Humanize())</td>
+                <td>@(item.LastModificationTime.HasValue && item.LastModificationTime < DateTime.Now.AddDays(-7) ? item.LastModificationTime.Value.ToString("dd.MM.yyyy") : item.LastModificationTime.Humanize())</td>
+                <td>
+                    @if (item.OrderStatus == OrderStatus.RequestActive)
+                    {
+                        <a href="#" class="waves-effect waves-block btn btn-primary btn-sm btnStart" data-id="@item.Guid"><i class="material-icons">edit</i>@L("Start")</a>
+                    }
+                    else if (item.OrderStatus == OrderStatus.BoostStarted)
+                    {
+                        <a href="#" class="waves-effect waves-block btn btn-primary btn-sm btnFinish" data-id="@item.Guid"><i class="material-icons">edit</i>@L("Finish")</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

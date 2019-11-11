@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Core", "EloBoost.Core\EloBoost.Core.csproj", "{0FA75A5B-AB83-4FD0-B545-279774C01E87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Application", "EloBoost.Application\EloBoost.Application.csproj", "{3870C648-4AEA-4B85-BA3F-F2F63B96136A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Tests", "EloBoost.Tests\EloBoost.Tests.csproj", "{0D4C5D00-C144-4213-A007-4B8944113AB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Web.Host", "EloBoost.Web.Host\EloBoost.Web.Host.csproj", "{38E184BD-E874-4633-A947-AED4FDB73F40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Web.Core", "EloBoost.Web.Core\EloBoost.Web.Core.csproj", "{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Web.Mvc", "EloBoost.Web.Mvc\EloBoost.Web.Mvc.csproj", "{A2213374-BB48-48FD-BBD4-81E6A961D866}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.EntityFramework", "EloBoost.EntityFrameworkCore\EloBoost.EntityFramework.csproj", "{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EloBoost.Shared", "EloBoost.Shared\EloBoost.Shared.csproj", "{4C5C3EFC-04B8-402A-9F3C-4ED932C97571}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA75A5B-AB83-4FD0-B545-279774C01E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA75A5B-AB83-4FD0-B545-279774C01E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA75A5B-AB83-4FD0-B545-279774C01E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA75A5B-AB83-4FD0-B545-279774C01E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4C5D00-C144-4213-A007-4B8944113AB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4C5D00-C144-4213-A007-4B8944113AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4C5D00-C144-4213-A007-4B8944113AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4C5D00-C144-4213-A007-4B8944113AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E184BD-E874-4633-A947-AED4FDB73F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E184BD-E874-4633-A947-AED4FDB73F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E184BD-E874-4633-A947-AED4FDB73F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E184BD-E874-4633-A947-AED4FDB73F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2213374-BB48-48FD-BBD4-81E6A961D866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2213374-BB48-48FD-BBD4-81E6A961D866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2213374-BB48-48FD-BBD4-81E6A961D866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2213374-BB48-48FD-BBD4-81E6A961D866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0580562-F8F2-4EBB-B07A-ABFC6F2C314F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5C3EFC-04B8-402A-9F3C-4ED932C97571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5C3EFC-04B8-402A-9F3C-4ED932C97571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5C3EFC-04B8-402A-9F3C-4ED932C97571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5C3EFC-04B8-402A-9F3C-4ED932C97571}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C22DCEA-90A8-4C3D-B4FA-915DCD5C604D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sekmen.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EloBoost.Core\\EloBoost.Core.csproj
+		SccProjectName1 = EloBoost.Core
+		SccLocalPath1 = EloBoost.Core
+		SccProjectUniqueName2 = EloBoost.Application\\EloBoost.Application.csproj
+		SccProjectName2 = EloBoost.Application
+		SccLocalPath2 = EloBoost.Application
+		SccProjectUniqueName3 = EloBoost.Tests\\EloBoost.Tests.csproj
+		SccProjectName3 = EloBoost.Tests
+		SccLocalPath3 = EloBoost.Tests
+		SccProjectUniqueName4 = EloBoost.Web.Host\\EloBoost.Web.Host.csproj
+		SccProjectName4 = EloBoost.Web.Host
+		SccLocalPath4 = EloBoost.Web.Host
+		SccProjectUniqueName5 = EloBoost.Web.Core\\EloBoost.Web.Core.csproj
+		SccProjectName5 = EloBoost.Web.Core
+		SccLocalPath5 = EloBoost.Web.Core
+		SccProjectUniqueName6 = EloBoost.Web.Mvc\\EloBoost.Web.Mvc.csproj
+		SccProjectName6 = EloBoost.Web.Mvc
+		SccLocalPath6 = EloBoost.Web.Mvc
+		SccProjectUniqueName7 = EloBoost.Shared\\EloBoost.Shared.csproj
+		SccProjectName7 = EloBoost.Shared
+		SccLocalPath7 = EloBoost.Shared
+		SccProjectUniqueName8 = EloBoost.EntityFrameworkCore\\EloBoost.EntityFramework.csproj
+		SccProjectName8 = EloBoost.EntityFrameworkCore
+		SccLocalPath8 = EloBoost.EntityFrameworkCore
+	EndGlobalSection
+EndGlobal
